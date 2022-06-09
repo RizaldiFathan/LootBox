@@ -15,28 +15,26 @@ $movie = query("SELECT * FROM movies WHERE id_artikel = $id")[0];
 
 
 // cek apakah tombol submit sudah ditekan atau belum
-if( isset($_POST["submit"]) ) {
-	
-	// cek apakah data berhasil diubah atau tidak
-	if( ubah($_POST) > 0 ) {
-		echo "
+if (isset($_POST["submit"])) {
+
+  // cek apakah data berhasil diubah atau tidak
+  if (ubah($_POST) > 0) {
+    echo "
 			<script>
 				alert('data berhasil diubah!');
 				document.location.href = 'admin.php';
 			</script>
 		";
-	} else {
-        // die();
-		echo "
+  } else {
+    // die();
+    echo "
 			<script>
 				alert('data gagal diubah!');
 				document.location.href = 'ubah.php?id_artikel=$id';
 			</script>
 		";
-        // exit;
-	}
-
-
+    // exit;
+  }
 }
 
 ?>
@@ -72,8 +70,8 @@ if( isset($_POST["submit"]) ) {
       </div>
     </div>
     <form method="post" enctype="multipart/form-data" action="">
-        <input type="hidden" name="id_artikel" value="<?= $movie["id_artikel"]; ?>">
-		<input type="hidden" name="gambarLama" value="<?= $movie["gambar"]; ?>">
+      <input type="hidden" name="id_artikel" value="<?= $movie["id_artikel"]; ?>">
+      <input type="hidden" name="gambarLama" value="<?= $movie["gambar"]; ?>">
       <div class="row g-2 align-items-center">
         <label for="judul_film" class="col-form-label col-sm-2">Judul Film</label>
         <div class="col-sm-10">
@@ -83,17 +81,17 @@ if( isset($_POST["submit"]) ) {
       <div class="row g-2 align-items-center mt-3">
         <label for="gambar_film" class="form-label col-sm-2">Upload Gambar</label>
         <div class="col-sm-10">
-            <img src="img/<?= $movie['gambar']; ?>" width="40"> <br>
+          <img src="img/<?= $movie['gambar']; ?>" width="40"> <br>
           <input class="form-control" type="file" id="gambar_film" name="gambar">
         </div>
-    </div>
-    <!-- <label for="artike">Upload Gambar</label>
+      </div>
+      <!-- <label for="artike">Upload Gambar</label>
     <input type="file" name="artikel" id="artikel"> -->
-    <div class="row g-2 align-items-center mt-3">
+      <div class="row g-2 align-items-center mt-3">
         <label for="floatingTextarea2" class="col-sm-2">Deskripsi Film</label>
         <div class="col-sm-10">
-            
-            <!-- <input class="form-control" type="text" id="deskripsi" name="deskripsi" value="<?= $movie["deskripsi"]; ?>"> -->
+
+          <!-- <input class="form-control" type="text" id="deskripsi" name="deskripsi" value="<?= $movie["deskripsi"]; ?>"> -->
           <textarea class="form-control texteditor" name="deskripsi" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"><?= $movie["deskripsi"]; ?></textarea>
         </div>
       </div>
