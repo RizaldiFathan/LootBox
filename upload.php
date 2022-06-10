@@ -91,7 +91,7 @@ if (isset($_POST["upload"])) {
       </div>
       <div class="row justify-content-center">
         <div class="col-3">
-          <button type="submit" class="btn btn-primary col-12 mt-5" name="upload">Upload</button>
+          <button type="submit" class="btn btn-primary mt-5 mb-5" name="upload">Upload</button>
         </div>
       </div>
       <!-- </div> -->

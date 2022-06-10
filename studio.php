@@ -18,10 +18,20 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <a href="tampil.php" class="btn btn-secondary mt-5 mb-3" style="float: right;">Back</a>
+            </div>
+        </div>
         <form action="" method="POST">
             <div class="row mt-5 justify-content-center">
-                <div class="col-5" style="color: red;">
+                <div class="col-10">
+                    <h1 style="text-align: center; color: white; background-color: black; height: 200px; line-height: 180px;">Layar Bioskop</h1>
+                </div>
+            </div>
+            <div class="row mt-5 justify-content-center">
+                <div class="col-5" style="text-align: center;">
                     <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off">
                     <label class="btn btn-outline-secondary" for="option1" style="width: 50px;">A1</label>
                     <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
@@ -143,7 +153,7 @@
                     <label class="btn btn-outline-secondary" style="width: 50px" for="option109">H7</label>
 
                 </div>
-                <div class="col-5">
+                <div class="col-5" style="text-align: center;">
                     <input type="radio" class="btn-check" name="options" id="option9" autocomplete="off">
                     <label class="btn btn-outline-secondary" style="width: 50px" for="option9">A8</label>
                     <input type="radio" class="btn-check" name="options" id="option10" autocomplete="off">
