@@ -1,10 +1,21 @@
 <?php
 session_start();
+require 'functions.php';
 
-if (isset($_SESSION['username'])) {
-    header("Location: member.php");
-    exit;
+if (!isset($_SESSION["username"])) {
+    echo "<script>
+            alert('Anda Belum Login, Silahkan Login Terlebih dahulu!');
+            document.location.href = 'index.php#';
+        </script>";
+    // header("Location: index.php");
+    return false;
 }
+$id = $_GET["id_artikel"];
+
+// if (isset($_SESSION['username'])) {
+//     header("Location: studio.php");
+//     exit;
+// }
 if (isset($_POST['submit'])) {
     if (pesan_tiket($_POST) > 0) {
         echo "<script>
@@ -39,7 +50,7 @@ if (isset($_POST['submit'])) {
     <div class="container mb-5">
         <div class="row justify-content-center">
             <div class="col-10">
-                <a href="tampil.php" class="btn btn-secondary mt-5 mb-3" style="float: right;">Back</a>
+                <a href="tampil.php?id_artikel=<?= $id; ?>" class="btn btn-secondary mt-5 mb-3" style="float: right;">Back</a>
             </div>
         </div>
         <form action="" method="POST">

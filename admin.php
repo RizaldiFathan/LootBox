@@ -131,7 +131,7 @@ if (!isset($_SESSION["username"])) {
 
                           </div>
                         </div>
-                        <a type="button" href="" class="btn btn-outline-secondary">Tampil</a>
+                        <a type="button" href="tampil.php?id_artikel=<?= $movie["id_artikel"]; ?>" class="btn btn-outline-secondary">Tampil</a>
                         <a type="button" href="ubah.php?id_artikel=<?= $movie["id_artikel"]; ?>" class="btn btn-outline-success">Edit</a>
                         <a type="button" href="hapus.php?id_artikel=<?= $movie["id_artikel"]; ?>" onclick="return confirm('yakin?');" class="btn btn-outline-danger">Hapus</a>
                       </div>

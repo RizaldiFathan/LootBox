@@ -31,16 +31,24 @@ $movie = query("SELECT * FROM movies WHERE id_artikel = $id")[0];
                 <a href="member.php" class="btn btn-secondary mt-5 mb-3" style="float: right;">Back</a>
             </div>
         </div>
-        <div class="row g-0 mt-5">
+        <div class="row g-0 mt-5 justify-content-center">
             <div class="col-md-4">
                 <img src="img/<?= $movie['gambar']; ?>" class="img-fluid rounded-start" style="width: 80%;" alt="...">
             </div>
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase"><?= $movie['judul_artikel']; ?></h5>
                     <p class="card-text"><?= $movie['deskripsi']; ?></p>
-                    <p class="card-text"><small class="text-muted"><?= $movie['rating']; ?></small><img src="img/star.png" style="margin-left: 3px;" alt=""></p>
-                    <a href="studio.php?id_artikel=<?= $movie['id_artikel'] ?>" class="btn btn-primary col-2">Pesan</a>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <p class="card-text fw-bold">Rp <small class="text-muted"><?= $movie['harga_tiket']; ?></small></p>
+                        </div>
+                        <div class="col text-end">
+                            <p class="card-text"><small class="text-muted"><?= $movie['rating']; ?></small><img src="img/star.png" style="margin-left: 3px;" alt=""></p>
+                        </div>
+                    </div>
+
+                    <a href="studio.php?id_artikel=<?= $id; ?>" class="btn btn-primary col-2">Pesan</a>
                 </div>
             </div>
         </div>
