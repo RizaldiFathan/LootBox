@@ -25,6 +25,17 @@
             </div>
         </div>
         <form action="" method="POST">
+        <div class="row mt-5 justify-content-center">
+            <div class="mb-3 col-4" >
+                <input type="text" class="form-control" name="nama" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap">
+            </div>
+            <div class="mb-3 col-4">
+                <input type="date" class="form-control" id="date" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3 col-5">
+                <input type="time" class="form-control" id="date" aria-describedby="emailHelp">
+            </div>
+        </div>
             <div class="row mt-5 justify-content-center">
                 <div class="col-10">
                     <h1 style="text-align: center; color: white; background-color: black; height: 200px; line-height: 180px;">Layar Bioskop</h1>

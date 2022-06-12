@@ -40,7 +40,7 @@ $movie = query("SELECT * FROM movies WHERE id_artikel = $id")[0];
                     <h5 class="card-title text-uppercase"><?= $movie['judul_artikel']; ?></h5>
                     <p class="card-text"><?= $movie['deskripsi']; ?></p>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    <a href="studio.php" class="btn btn-primary col-2">Pesan</a>
+                    <a href="studio.php?id_artikel=<?= $movie['id_artikel']?>" class="btn btn-primary col-2">Pesan</a>
                 </div>
             </div>
         </div>
