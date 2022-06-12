@@ -39,7 +39,7 @@ $movie = query("SELECT * FROM movies WHERE id_artikel = $id")[0];
                 <div class="card-body">
                     <h5 class="card-title text-uppercase"><?= $movie['judul_artikel']; ?></h5>
                     <p class="card-text"><?= $movie['deskripsi']; ?></p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <p class="card-text"><small class="text-muted"><?= $movie['rating']; ?></small><img src="img/star.png" style="margin-left: 5px;" alt=""></p>
                     <a href="studio.php" class="btn btn-primary col-2">Pesan</a>
                 </div>
             </div>
