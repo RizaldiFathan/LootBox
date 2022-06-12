@@ -1,3 +1,21 @@
+<?php
+    session_start();
+
+    if (isset($_SESSION['username'])) {
+      header("Location: member.php");
+      exit;
+    }
+    if (isset($_POST['submit'])) {
+        if (pesan_tiket($_POST) > 0) {
+            echo "<script>
+                  alert('Tiket berhasil dipesan!');
+                  document.location.href = 'member.php';
+                  </script>";
+          } else {
+            echo mysqli_error($conn);
+          }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,17 +44,24 @@
         </div>
         <form action="" method="POST">
         <div class="row mt-5 justify-content-center">
-            <div class="mb-3 col-4" >
+            <div class="mb-3 col-5" >
                 <input type="text" class="form-control" name="nama" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap">
             </div>
-            <div class="mb-3 col-4">
-                <input type="date" class="form-control" id="date" aria-describedby="emailHelp">
-            </div>
             <div class="mb-3 col-5">
-                <input type="time" class="form-control" id="date" aria-describedby="emailHelp">
+                <input type="date" class="form-control" name="tgl_pesan" id="date" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-5 col-5">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Pilih Jam Menonton</option>
+                    <option value="15.00">15.00 WIB</option>
+                    <option value="17.00">17.00 WIB</option>
+                    <option value="19.00">19.00 WIB</option>
+                    <option value="21.00">21.00 WIB</option>
+                    <option value="23.00">23.00 WIB</option>
+                </select>
             </div>
         </div>
-            <div class="row mt-5 justify-content-center">
+            <div class="row mt-6 justify-content-center">
                 <div class="col-10">
                     <h1 style="text-align: center; color: white; background-color: black; height: 200px; line-height: 180px;">Layar Bioskop</h1>
                 </div>
