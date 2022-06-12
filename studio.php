@@ -16,6 +16,10 @@ if (isset($_POST['submit'])) {
         echo mysqli_error($conn);
     }
 }
+$id = $_GET["id_artikel"];
+// query data mahasiswa berdasarkan id
+$movie = query("SELECT * FROM movies WHERE id_artikel = $id")[0];
+?>
 ?>
 <!DOCTYPE html>
 <html lang="en">
