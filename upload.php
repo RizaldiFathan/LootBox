@@ -95,6 +95,12 @@ if (isset($_POST["upload"])) {
           <input type="number" id="rating" name="rating" class="form-control" aria-describedby="rating" autofocus required>
         </div>
       </div>
+      <div class="row g-2 align-items-center mt-3">
+        <label for="harga_tiket" class="col-form-label col-sm-2">Harga Tiket</label>
+        <div class="col-sm-10">
+          <input type="number" id="harga_tiket" name="harga_tiket" class="form-control" aria-describedby="harga_tiket" autofocus required>
+        </div>
+      </div>
       <div class="row justify-content-center">
         <div class="col text-center">
           <button type="submit" class="btn btn-primary mt-5 mb-5 col-2" name="upload">Upload</button>

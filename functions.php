@@ -19,6 +19,7 @@ function tambah($data)
 	$id = htmlspecialchars($data["id"]);
 	$desc_film = $data["desk_film"];
 	$ch_kategori = htmlspecialchars($data["kategori_film"]);
+	$harga_tiket = htmlspecialchars($data["harga_tiket"]);
 	$judul_film = htmlspecialchars($data["judul_film"]);
 	$rating_film = htmlspecialchars($data["rating"]);
 	$tipe_file = $_FILES['gambar_film']['type'];
@@ -31,7 +32,7 @@ function tambah($data)
 
 	$query = "INSERT INTO movies
 				VALUES
-			  ('', '$id', '$tipe_file', '$gambar', '$desc_film', '$ch_kategori', '$judul_film', '$rating_film')
+			  ('', '$id', '$tipe_file', '$gambar', '$desc_film', '$ch_kategori', '$judul_film', '$rating_film', '$harga_tiket')
 			";
 	mysqli_query($conn, $query);
 
@@ -92,6 +93,7 @@ function ubah($data)
 	$id = $data["id_artikel"];
 	$desc_film = $data["deskripsi"];
 	$ch_kategori = htmlspecialchars($data["kategori_film"]);
+	$harga_tiket = htmlspecialchars($data["harga_tiket"]);
 	$judul_film = htmlspecialchars($data["judul_film"]);
 	$rating_film = htmlspecialchars($data["rating"]);
 	$gambarLama = htmlspecialchars($data["gambarLama"]);
@@ -110,6 +112,7 @@ function ubah($data)
 	$query = "UPDATE movies SET
 				judul_artikel = '$judul_film',
 				rating = '$rating_film',
+				harga_tiket = '$harga_tiket',
 				gambar = '$gambar',
 				deskripsi = '$desc_film',
 				kategori = '$ch_kategori'
