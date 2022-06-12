@@ -122,7 +122,15 @@ if (!isset($_SESSION["username"])) {
                         <h5 class="card-title text-uppercase"><?= $movie['judul_artikel']; ?></h5>
                         <p class="card-text"><?php $desc = substr($movie['deskripsi'], 0, 90);
                                               echo $desc . "..." ?></p>
-                        <p class="card-text"><small class="text-muted"><?= $movie['kategori']; ?></small></p>
+                        <div class="row mb-1">
+                          <div class="col">
+                            <p class="card-text"><small class="text-muted"><?= $movie['kategori']; ?></small></p>
+                          </div>
+                          <div class="col">
+                            <p class="card-text" style="text-align: right;"><small class="text-muted"><?= $movie['rating']; ?></small><img src="img/star.png" class="ml-1" alt="" style="width: 12px;"></p>
+
+                          </div>
+                        </div>
                         <a type="button" href="" class="btn btn-outline-secondary">Tampil</a>
                         <a type="button" href="ubah.php?id_artikel=<?= $movie["id_artikel"]; ?>" class="btn btn-outline-success">Edit</a>
                         <a type="button" href="hapus.php?id_artikel=<?= $movie["id_artikel"]; ?>" onclick="return confirm('yakin?');" class="btn btn-outline-danger">Hapus</a>

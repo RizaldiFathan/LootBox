@@ -20,6 +20,7 @@ function tambah($data)
 	$desc_film = $data["desk_film"];
 	$ch_kategori = htmlspecialchars($data["kategori_film"]);
 	$judul_film = htmlspecialchars($data["judul_film"]);
+	$rating_film = htmlspecialchars($data["rating"]);
 	$tipe_file = $_FILES['gambar_film']['type'];
 
 	// upload gambar
@@ -30,7 +31,7 @@ function tambah($data)
 
 	$query = "INSERT INTO movies
 				VALUES
-			  ('', '$id', '$tipe_file', '$gambar', '$desc_film', '$ch_kategori', '$judul_film')
+			  ('', '$id', '$tipe_file', '$gambar', '$desc_film', '$ch_kategori', '$judul_film', '$rating_film')
 			";
 	mysqli_query($conn, $query);
 
@@ -84,28 +85,31 @@ function upload()
 
 	return $namaFileBaru;
 }
-function ubah($data) {
+function ubah($data)
+{
 	global $conn;
 
 	$id = $data["id_artikel"];
 	$desc_film = $data["deskripsi"];
 	$ch_kategori = htmlspecialchars($data["kategori_film"]);
 	$judul_film = htmlspecialchars($data["judul_film"]);
+	$rating_film = htmlspecialchars($data["rating"]);
 	$gambarLama = htmlspecialchars($data["gambarLama"]);
 
 	// cek apakah user pilih gambar baru atau tidak
-	if( $_FILES['gambar']['error'] === 4 ) {
+	if ($_FILES['gambar']['error'] === 4) {
 		$gambar = $gambarLama;
 	} else {
 		$gambar = upload();
 	}
-	
+
 	// var_dump($id,$desc_film,$ch_kategori,$judul_film,$gambarLama,$gambar);
 	// exit;
-	
+
 
 	$query = "UPDATE movies SET
 				judul_artikel = '$judul_film',
+				rating = '$rating_film',
 				gambar = '$gambar',
 				deskripsi = '$desc_film',
 				kategori = '$ch_kategori'
@@ -115,7 +119,7 @@ function ubah($data) {
 	// exit;	
 	mysqli_query($conn, $query);
 
-	return mysqli_affected_rows($conn);	
+	return mysqli_affected_rows($conn);
 }
 
 function hapus($id)

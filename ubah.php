@@ -107,9 +107,15 @@ if (isset($_POST["submit"])) {
           </select>
         </div>
       </div>
+      <div class="row g-2 align-items-center mt-3">
+        <label for="rating" class="col-form-label col-sm-2">Rating Film</label>
+        <div class="col-sm-10">
+          <input type="number" id="rating" value="<?= $movie["rating"]; ?>" name="rating" class="form-control" aria-describedby="movieHelpInline" autofocus required>
+        </div>
+      </div>
       <div class="row justify-content-center">
-        <div class="col-3">
-          <button type="submit" class="btn btn-primary mt-5 mb-5" name="submit">Update</button>
+        <div class="col text-center">
+          <button type="submit" class="btn btn-primary mt-5 mb-5 col-2" name="submit">Update</button>
         </div>
       </div>
       <!-- </div> -->
