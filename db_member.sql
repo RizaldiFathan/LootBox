@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2020 at 08:05 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- Waktu pembuatan: 12 Jun 2022 pada 06.20
+-- Versi server: 10.4.22-MariaDB
+-- Versi PHP: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,38 +18,38 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `member`
+-- Database: `db_member`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `artikel`
+-- Struktur dari tabel `movies`
 --
 
-CREATE TABLE `artikel` (
+CREATE TABLE `movies` (
   `id_artikel` int(11) NOT NULL,
   `id_member` int(11) NOT NULL,
   `type` varchar(20) NOT NULL,
   `gambar` varchar(50) NOT NULL,
   `deskripsi` text NOT NULL,
   `kategori` varchar(20) NOT NULL,
-  `judul_artikel` varchar(500) NOT NULL
+  `judul_artikel` varchar(500) NOT NULL,
+  `rating` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `artikel`
+-- Dumping data untuk tabel `movies`
 --
 
-INSERT INTO `artikel` (`id_artikel`, `id_member`, `type`, `gambar`, `deskripsi`, `kategori`, `judul_artikel`) VALUES
-(16, 18, 'image/jpeg', '5fbd2afaa8f7b.jpg', 'Borobudur adalah sebuah candi Buddha yang terletak di Borobudur, Magelang, Jawa Tengah, Indonesia. Candi ini terletak kurang lebih 100 km di sebelah barat daya Semarang, 86 km di sebelah barat Surakarta, dan 40 km di sebelah barat laut Yogyakarta.', 'adventur', 'CANDI BOROBUDUR'),
-(17, 18, 'image/jpeg', '5fbd32c34f50b.jpg', 'Candi Prambanan atau Candi Roro Jonggrang adalah kompleks candi Hindu terbesar di Indonesia yang dibangun pada abad ke-9 masehi. Candi ini dipersembahkan untuk Trimurti, tiga dewa utama Hindu yaitu Brahma sebagai dewa pencipta, Wisnu sebagai dewa pemelihara, dan Siwa sebagai dewa pemusnah.', 'adventur', 'CANDI PRAMBANAN'),
-(18, 18, 'image/jpeg', '5fbd41d89c98d.jpg', 'Stadion Mandala Krida adalah sebuah stadion yang terletak di Kota Yogyakarta Provinsi DIY. Stadion ini di kelilingi oleh tiga jalan yaitu sebelah timur adalah Jalan Gondosuli, sebelah selatan adalah Jalan Kenari, dan sebelah barat adalah Jalan Andung.', 'sport', 'STADIUM MANDALA KRIDA');
+INSERT INTO `movies` (`id_artikel`, `id_member`, `type`, `gambar`, `deskripsi`, `kategori`, `judul_artikel`, `rating`) VALUES
+(22, 18, 'image/jpeg', '629c762a31873.jpg', '<p><strong><em><u>ini film hacker</u></em></strong></p>\r\n', 'Action', 'hacker', 4.5),
+(24, 18, 'image/jpeg', '62a199255c78f.jpg', '<p>ini film sonic</p>\r\n', 'Drama', 'sonic 2', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `register`
+-- Struktur dari tabel `register`
 --
 
 CREATE TABLE `register` (
@@ -64,44 +63,45 @@ CREATE TABLE `register` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `register`
+-- Dumping data untuk tabel `register`
 --
 
 INSERT INTO `register` (`id_member`, `email`, `username`, `password`, `nama_member`, `alamat`, `no_identitas`) VALUES
-(18, 'rizaldy.fathan.rfa@gmail.com', 'admin', '$2y$10$FHgNlpTbyRyWEQZBSz910..yfBeYVod.7xcz99N.13daanLwjJ4U.', 'rizaldi fathan qorib', 'indramayu', '321201');
+(21, 'admin@admin.com', 'admin', '$2y$10$Fv.TNgXKF/gt1roh8mppke663DX7oK0wuiq565i/ktww3wd3Rec0e', 'admin', 'Indonesia', '8888'),
+(22, 'user@gmail.com', 'user', '$2y$10$3sTYYRIePuRy9Q8TrhtBKOjdF96cwZUfKhUj42pyi7XCizNgAFZCm', 'user', 'indonesia', '1111');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `artikel`
+-- Indeks untuk tabel `movies`
 --
-ALTER TABLE `artikel`
+ALTER TABLE `movies`
   ADD PRIMARY KEY (`id_artikel`),
   ADD KEY `id_member` (`id_member`);
 
 --
--- Indexes for table `register`
+-- Indeks untuk tabel `register`
 --
 ALTER TABLE `register`
   ADD PRIMARY KEY (`id_member`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `artikel`
+-- AUTO_INCREMENT untuk tabel `movies`
 --
-ALTER TABLE `artikel`
-  MODIFY `id_artikel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+ALTER TABLE `movies`
+  MODIFY `id_artikel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `register`
+-- AUTO_INCREMENT untuk tabel `register`
 --
 ALTER TABLE `register`
-  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
