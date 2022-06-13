@@ -180,16 +180,16 @@ function pesan_tiket($data)
 
 	$nama_customer = $data["nama"];
 	$tgl_pesan = $data["tgl_pesan"];
-	$jam_pesan =$data["jam"];
+	$jam_pesan = $data["jam"];
 	$kursi = $data["options"];
-	var_dump($nama_customer,$tgl_pesan,$jam_pesan,$kursi);
-	exit;
+	// var_dump($nama_customer, $tgl_pesan, $jam_pesan, $kursi);
+	// exit;
 
 	// upload gambar
-	$gambar = upload();
-	if (!$gambar) {
-		return false;
-	}
+	// $gambar = upload();
+	// if (!$gambar) {
+	// 	return false;
+	// }
 
 	$query = "INSERT INTO tiket
 				VALUES
@@ -198,5 +198,4 @@ function pesan_tiket($data)
 	mysqli_query($conn, $query);
 
 	return mysqli_affected_rows($conn);
-
 }
