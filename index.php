@@ -7,6 +7,7 @@ if (isset($_SESSION['login'])) {
 }
 
 require 'functions.php';
+$id_member = query("SELECT id_member FROM register");
 $artikel = query("SELECT * FROM movies")[0];
 //jika tombol login ditekan, maka akan mengirimkan variabel yang berisi username dan password
 if (isset($_POST['login'])) {

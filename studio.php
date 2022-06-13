@@ -11,7 +11,7 @@ if (!isset($_SESSION["username"])) {
     return false;
 }
 $id = $_GET["id_artikel"];
-
+$nama = query("SELECT * FROM register WHERE username = '$_SESSION[username]';");
 
 // if (isset($_SESSION['username'])) {
 //     header("Location: studio.php");
@@ -56,6 +56,9 @@ if (isset($_POST['submit'])) {
         </div>
         <form action="" method="POST">
             <div class="row mt-5 justify-content-center">
+                <div class="mb-3 col-5">
+                    <input type="text" class="form-control" name="id_artikel" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap" value="<?= $_GET['id_artikel'] ?>">
+                </div>
                 <div class="mb-3 col-5">
                     <input type="text" class="form-control" name="nama" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap">
                 </div>
