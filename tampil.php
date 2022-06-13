@@ -9,6 +9,7 @@ require 'functions.php';
 // }
 // ambil data di URL
 $id = $_GET["id_artikel"];
+$member = $_GET['id_member'];
 
 // query data mahasiswa berdasarkan id
 $movie = query("SELECT * FROM movies WHERE id_artikel = $id")[0];
@@ -47,8 +48,8 @@ $movie = query("SELECT * FROM movies WHERE id_artikel = $id")[0];
                             <p class="card-text"><small class="text-muted"><?= $movie['rating']; ?></small><img src="img/star.png" style="margin-left: 3px;" alt=""></p>
                         </div>
                     </div>
-
-                    <a href="studio.php?id_artikel=<?= $id; ?>" class="btn btn-primary col-2">Pesan</a>
+        
+                    <a href="studio.php?id_artikel=<?= $id;?>&id_member=<?php echo $member; ?>" class="btn btn-primary col-2">Pesan</a>
                 </div>
             </div>
         </div>

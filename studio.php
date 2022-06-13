@@ -57,7 +57,10 @@ if (isset($_POST['submit'])) {
         <form action="" method="POST">
             <div class="row mt-5 justify-content-center">
                 <div class="mb-3 col-5">
-                    <input type="text" class="form-control" name="id_artikel" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap" value="<?= $_GET['id_artikel'] ?>">
+                    <input type="hidden" class="form-control" name="id_member" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap" value="<?= $_GET['id_member'] ?>">
+                </div>
+                <div class="mb-3 col-5">
+                    <input type="hidden" class="form-control" name="id_artikel" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap" value="<?= $_GET['id_artikel'] ?>">
                 </div>
                 <div class="mb-3 col-5">
                     <input type="text" class="form-control" name="nama" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap">

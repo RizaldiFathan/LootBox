@@ -178,12 +178,14 @@ function pesan_tiket($data)
 {
 	global $conn;
 
+	$id_artikel = $data["id_artikel"];
+	$id_member = $data["id_member"];
 	$nama_customer = $data["nama"];
 	$tgl_pesan = $data["tgl_pesan"];
 	$jam_pesan = $data["jam"];
 	$kursi = $data["options"];
-	// var_dump($nama_customer, $tgl_pesan, $jam_pesan, $kursi);
-	// exit;
+	var_dump($id_artikel,$id_member,$nama_customer, $tgl_pesan, $jam_pesan, $kursi);
+	exit;
 
 	// upload gambar
 	// $gambar = upload();
@@ -193,7 +195,7 @@ function pesan_tiket($data)
 
 	$query = "INSERT INTO tiket
 				VALUES
-			  ('', '$nama_customer', '$tgl_pesan', '$jam_pesan')
+			  ('', '$nama_customer', '$tgl_pesan', '$jam_pesan', '$id_artikel', '$id_member')
 			";
 	mysqli_query($conn, $query);
 
