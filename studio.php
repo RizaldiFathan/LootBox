@@ -89,7 +89,7 @@ if (isset($_POST['submit'])) {
             </div>
             <div class="row justify-content-center">
                 <div class="col-2 text-center">
-                    <button class="btn btn-primary mt-5 px-5" name="sumbit" type="submit">Pesan</button>
+                    <button class="btn btn-primary mt-5 px-5" name="submit" type="submit">Pesan</button>
                 </div>
             </div>
         </form>
