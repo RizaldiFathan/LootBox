@@ -11,7 +11,7 @@ if (!isset($_SESSION["username"])) {
     return false;
 }
 $id = $_GET["id_artikel"];
-$nama = query("SELECT * FROM register WHERE username = '$_SESSION[username]';");
+$member = $_GET['id_member'];
 
 // if (isset($_SESSION['username'])) {
 //     header("Location: studio.php");
@@ -51,7 +51,7 @@ if (isset($_POST['submit'])) {
     <div class="container mb-5">
         <div class="row justify-content-center">
             <div class="col-10">
-                <a href="tampil.php?id_artikel=<?= $id; ?>" class="btn btn-secondary mt-5 mb-3" style="float: right;">Back</a>
+                <a href="tampil.php?id_artikel=<?= $id; ?>&id_member=<?= $member?>" class="btn btn-secondary mt-5 mb-3" style="float: right;">Back</a>
             </div>
         </div>
         <form action="" method="POST">
@@ -87,9 +87,18 @@ if (isset($_POST['submit'])) {
             <div class="row mt-5 justify-content-center">
                 <div class="col-9" style="text-align: center;">
                     <?php $chairs = query("SELECT * FROM kursi");
+                    
                     $i = 1; ?>
                     <?php foreach ($chairs as $chair) : ?>
-                        <input type="radio" class="btn-check" name="options" value="<?= $chair['id_kursi']; ?>" id="option<?= $i; ?>" autocomplete="off" <?= $chair['is_active']; ?>>
+                        <?php $tickets = query("SELECT * FROM tiket where id_artikel=$id and id_kursi='$chair[id_kursi]'");
+                        // var_dump(empty($tickets));
+                        // exit;
+                        ?>
+                        <input type="radio" class="btn-check" name="options" value="<?= $chair['id_kursi']; ?>" id="option<?= $i; ?>" autocomplete="off" <?php if ($tickets ==  true) {
+                            echo "disabled";
+                        }else {
+                            echo "actived";
+                        } ?>>
                         <label class="btn btn-outline-secondary" for="option<?= $i++; ?>" style="width: 52px;"><?= $chair['nomor_kursi']; ?></label>
                     <?php endforeach; ?>
                 </div>
