@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
                     <input type="date" class="form-control" name="tgl_pesan" id="date" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-5 col-5">
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" name="jam" aria-label="Default select example">
                         <option selected>Pilih Jam Menonton</option>
                         <option value="15.00">15.00 WIB</option>
                         <option value="17.00">17.00 WIB</option>

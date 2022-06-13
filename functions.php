@@ -174,6 +174,29 @@ function registrasi($data)
 	return mysqli_affected_rows($conn);
 }
 
-function pesan_tiket()
+function pesan_tiket($data)
 {
+	global $conn;
+
+	$nama_customer = $data["nama"];
+	$tgl_pesan = $data["tgl_pesan"];
+	$jam_pesan =$data["jam"];
+	$kursi = $data["options"];
+	var_dump($nama_customer,$tgl_pesan,$jam_pesan,$kursi);
+	exit;
+
+	// upload gambar
+	$gambar = upload();
+	if (!$gambar) {
+		return false;
+	}
+
+	$query = "INSERT INTO movies
+				VALUES
+			  ('', '$id', '$tipe_file', '$gambar', '$desc_film', '$ch_kategori', '$judul_film', '$rating_film', '$harga_tiket')
+			";
+	mysqli_query($conn, $query);
+
+	return mysqli_affected_rows($conn);
+
 }
