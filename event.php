@@ -223,28 +223,13 @@ if (isset($_POST['login'])) {
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img alt="First slide" class="d-block w-100" src="img/5fbd2afaa8f7b.jpg">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="animated bounceInRight" style="animation-delay: 1s;">Candi Borobudur</h5>
-            <p class="animated bounceInLeft" style="animation-delay: 2s;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt excepturi quas vero.</p>
-            <p class="animated bounceInRight" style="animation-delay: 3s;"><a href="#" class="btn btn-warning">More Info</a></p>
-          </div>
+          <img alt="First slide" class="d-block w-100" src="img/endgame.png">
         </div>
         <div class="carousel-item">
-          <img alt="Second slide" class="d-block w-100" src="img/dsdgsr.jpg">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="animated slideInDown" style="animation-delay: 1s;">Candi Perambanan</h5>
-            <p class="animated fadeInUp" style="animation-delay: 2s;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt excepturi quas vero.</p>
-            <p class="animated zoomIn" style="animation-delay: 3s;"><a href="#" class="btn btn-warning">More Info</a></p>
-          </div>
+          <img alt="Second slide" class="d-block w-100" src="img/nwh.jpeg">
         </div>
         <div class="carousel-item">
-          <img alt="Third slide" class="d-block w-100" src="img/5fbd41d89c98d.jpg">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="animated zoomIn" style="animation-delay: 1s;">Stadion Mandala Krida</h5>
-            <p class="animated fadeInLeft" style="animation-delay: 2s;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt excepturi quas vero.</p>
-            <p class="animated zoomIn" style="animation-delay: 3s;"><a href="#" class="btn btn-warning">More Info</a></p>
-          </div>
+          <img alt="Third slide" class="d-block w-100" src="img/doctor strange.jpg">
         </div>
       </div>
       <a class="carousel-control-prev" data-slide="prev" href="#carouselExampleIndicators" role="button">
