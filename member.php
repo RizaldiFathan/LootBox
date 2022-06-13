@@ -11,6 +11,10 @@ if (!isset($_SESSION["username"])) {
     exit;
 }
 
+$id_member = query("SELECT id_member From register where username='$_SESSION[username]'");
+// // var_dump($id_member);
+// echo $id_member['id_member'];
+// exit;
 ?>
 <!doctype html>
 <html lang="en">
@@ -131,9 +135,11 @@ if (!isset($_SESSION["username"])) {
 
                                                     </div>
                                                 </div>
-                                                <a type="button" href="tampil.php?id_artikel=<?= $movie['id_artikel']; ?>" class="btn btn-outline-secondary mt-1">Tampil</a>
-                                                <!-- <a type="button" href="ubah.php?id_artikel=<?= $movie["id_artikel"]; ?>" class="btn btn-outline-success">Edit</a> -->
-                                                <!-- <a type="button" href="hapus.php?id_artikel=<?= $movie["id_artikel"]; ?>" onclick="return confirm('yakin?');" class="btn btn-outline-danger">Hapus</a> -->
+                                                <?php foreach ($id_member as $member) : ?>
+
+                                                    <a type="button" href="tampil.php?id_artikel=<?= $movie['id_artikel']; ?>&id_member=<?= $member['id_member']; ?>" class="btn btn-outline-secondary mt-1">Tampil</a>
+
+                                                <?php endforeach ?>
                                             </div>
                                         </div>
                                     </div>
