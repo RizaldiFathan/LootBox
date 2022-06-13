@@ -82,7 +82,7 @@ if (isset($_POST['submit'])) {
                     <?php $chairs = query("SELECT * FROM kursi");
                     $i = 1; ?>
                     <?php foreach ($chairs as $chair) : ?>
-                        <input type="radio" class="btn-check" name="options" id="option<?= $i; ?>" autocomplete="off" <?= $chair['is_active']; ?>>
+                        <input type="radio" class="btn-check" name="options" value="<?= $chair['id_kursi']; ?>" id="option<?= $i; ?>" autocomplete="off" <?= $chair['is_active']; ?>>
                         <label class="btn btn-outline-secondary" for="option<?= $i++; ?>" style="width: 52px;"><?= $chair['nomor_kursi']; ?></label>
                     <?php endforeach; ?>
                 </div>
