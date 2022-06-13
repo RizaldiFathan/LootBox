@@ -12,6 +12,7 @@ if (!isset($_SESSION["username"])) {
 }
 $id = $_GET["id_artikel"];
 
+
 // if (isset($_SESSION['username'])) {
 //     header("Location: studio.php");
 //     exit;
