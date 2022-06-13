@@ -191,9 +191,9 @@ function pesan_tiket($data)
 		return false;
 	}
 
-	$query = "INSERT INTO movies
+	$query = "INSERT INTO tiket
 				VALUES
-			  ('', '$id', '$tipe_file', '$gambar', '$desc_film', '$ch_kategori', '$judul_film', '$rating_film', '$harga_tiket')
+			  ('', '$nama_customer', '$tgl_pesan', '$jam_pesan')
 			";
 	mysqli_query($conn, $query);
 
