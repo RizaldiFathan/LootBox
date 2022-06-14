@@ -190,15 +190,6 @@ function pesan_tiket($data)
 	$tgl_pesan = $data["tgl_pesan"];
 	$jam_pesan = $data["jam"];
 	$kursi = $data["options"];
-	// $status = "disabled";
-	// var_dump($id_artikel,$id_member,$nama_customer, $tgl_pesan, $jam_pesan, $kursi);
-	// exit;
-
-	// upload gambar
-	// $gambar = upload();
-	// if (!$gambar) {
-	// 	return false;
-	// }
 
 	$query = "INSERT INTO tiket
 				VALUES

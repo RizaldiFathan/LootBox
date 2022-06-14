@@ -7,16 +7,11 @@ if (!isset($_SESSION["username"])) {
             alert('Anda Belum Login, Silahkan Login Terlebih dahulu!');
             document.location.href = 'index.php#';
         </script>";
-    // header("Location: index.php");
     return false;
 }
 $id = $_GET["id_artikel"];
 $member = $_GET['id_member'];
 
-// if (isset($_SESSION['username'])) {
-//     header("Location: studio.php");
-//     exit;
-// }
 if (isset($_POST['submit'])) {
     if (pesan_tiket($_POST) > 0) {
         echo "<script>
@@ -42,7 +37,6 @@ if (isset($_POST['submit'])) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
     <!-- my css -->
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="coba.css"> -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>Studio</title>
 </head>
@@ -92,9 +86,7 @@ if (isset($_POST['submit'])) {
 
                         $i = 1; ?>
                         <?php foreach ($chairs as $chair) : ?>
-                            <?php $tickets = query("SELECT * FROM tiket where id_artikel=$id and id_kursi='$chair[id_kursi]' and id_member='$member'");
-                            // var_dump(empty($tickets));
-                            // exit;
+                            <?php $tickets = query("SELECT * FROM tiket where id_artikel=$id and id_kursi='$chair[id_kursi]'");
                             ?>
                             <input type="radio" class="btn-check" name="options" value="<?= $chair['id_kursi']; ?>" id="option<?= $i; ?>" autocomplete="off" <?php if ($tickets ==  true) {
                                                                                                                                                                     echo "disabled";

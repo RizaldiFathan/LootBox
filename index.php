@@ -295,7 +295,7 @@ if (isset($_POST['login'])) {
         <div class="content">
           <div class="place">
             <span class="fas fa-map-marker-alt"></span>
-            <span class="text">Sleman, Yogyakarta</span>
+            <span class="text">Tangerang</span>
           </div>
           <div class="phone">
             <span class="fas fa-phone"></span>
@@ -303,7 +303,7 @@ if (isset($_POST['login'])) {
           </div>
           <div class="email">
             <span class="fas fa-envelope"></span>
-            <span class="text">kuyjogja@example.com</span>
+            <span class="text">LootBox@example.com</span>
           </div>
         </div>
       </div>

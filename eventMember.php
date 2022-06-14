@@ -80,7 +80,7 @@ if (isset($_POST['login'])) {
   <title>Movies</title>
   <style>
     .slide {
-      /* margin-top: -86px; */
+      margin-top: -86px;
       margin-bottom: 90px;
     }
 
@@ -131,6 +131,7 @@ if (isset($_POST['login'])) {
         <div class="navbar-nav ml-auto">
           <a class="nav-item active" href="member.php">Home</a>
           <a class="nav-item nav-link" href="eventMember.php">Movies</a>
+          <a class="nav-item active" href="transaksi.php">Transaksi</a>
           <a class="nav-item active" href="#info">About</a>
           <a class="btn btn-warning tombol" href="logout.php">LOGOUT</a>
         </div>
@@ -214,7 +215,7 @@ if (isset($_POST['login'])) {
           <div class="content">
             <div class="place">
               <span class="fas fa-map-marker-alt"></span>
-              <span class="text">Sleman, Yogyakarta</span>
+              <span class="text">Tangerang</span>
             </div>
             <div class="phone">
               <span class="fas fa-phone"></span>
@@ -222,7 +223,7 @@ if (isset($_POST['login'])) {
             </div>
             <div class="email">
               <span class="fas fa-envelope"></span>
-              <span class="text">kuyjogja@example.com</span>
+              <span class="text">LootBox@example.com</span>
             </div>
           </div>
         </div>

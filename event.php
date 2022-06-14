@@ -88,7 +88,7 @@ if (isset($_POST['login'])) {
   <title>Movies</title>
   <style>
     .slide {
-      /* margin-top: -86px; */
+      margin-top: -86px;
       margin-bottom: 90px;
     }
 
@@ -303,7 +303,7 @@ if (isset($_POST['login'])) {
           <div class="content">
             <div class="place">
               <span class="fas fa-map-marker-alt"></span>
-              <span class="text">Sleman, Yogyakarta</span>
+              <span class="text">Tangerang</span>
             </div>
             <div class="phone">
               <span class="fas fa-phone"></span>
@@ -311,7 +311,7 @@ if (isset($_POST['login'])) {
             </div>
             <div class="email">
               <span class="fas fa-envelope"></span>
-              <span class="text">kuyjogja@example.com</span>
+              <span class="text">LootBox@example.com</span>
             </div>
           </div>
         </div>
@@ -343,19 +343,17 @@ if (isset($_POST['login'])) {
   <script>
     var x = document.getElementById("signup");
     var y = document.getElementById("register");
-    var z = document.getElementById("btn");
 
     function register() {
-      x.style.left = "-400px";
-      y.style.left = "25px";
-      z.style.left = "0px";
+      x.style.left = "-470px";
+      y.style.left = "0";
+      y.style.top = "-220px";
       TransitionEvent
     }
 
     function login() {
-      x.style.left = "25px";
+      x.style.left = "0";
       y.style.left = "480px";
-      z.style.left = "0px";
       TransitionEvent
     }
   </script>
