@@ -68,10 +68,6 @@ if (isset($_POST['login'])) {
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script> -->
-
 
   <!-- fonts -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
@@ -207,8 +203,8 @@ if (isset($_POST['login'])) {
             </div>
             <div class="bottom">
               <center>
-                <span class="credit">Created By <a href="#">KUYJogja</a> | </span>
-                <span class="far fa-copyright"></span> 2020 All rights reserved.
+                <span class="credit">Created By <a href="#">LootBox</a> | </span>
+                <span class="far fa-copyright"></span> 2022 All rights reserved.
               </center>
             </div>
           </div>

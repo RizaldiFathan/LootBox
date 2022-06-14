@@ -12,9 +12,7 @@ if (!isset($_SESSION["username"])) {
 }
 
 $id_member = query("SELECT id_member From register where username='$_SESSION[username]'");
-// // var_dump($id_member);
-// echo $id_member['id_member'];
-// exit;
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -54,7 +52,6 @@ $id_member = query("SELECT id_member From register where username='$_SESSION[use
                     <a class="nav-item nav-link" href="#">Home</a>
                     <a class="nav-item active" href="eventMember.php">Movies</a>
                     <a class="nav-item active" href="#info">About</a>
-                    <!-- <a class="nav-item active" href="upload.php">UPLOAD</a> -->
                     <a class="btn btn-warning tombol" href="logout.php">LOGOUT</a>
                 </div>
             </div>
@@ -151,21 +148,6 @@ $id_member = query("SELECT id_member From register where username='$_SESSION[use
             </div>
         </div>
     </div>
-    <!-- author -->
-    <!-- <div class="row justify-content-center">
-        <div class="col-lg-6 justify-content-center d-flex">
-          <figure class="figure">
-            <a href="#">
-              <img src="img/zalfa3.jpg" class="figure-img img-fluid rounded-circle" alt="zlf">
-              <figcaption class="figure-caption">
-                <h5>IZAL</h5>
-                <p>author</p>
-              </figcaption>
-            </a>
-          </figure>
-        </div>
-      </div>-->
-
 
     <footer class="footer mt-auto py-3" id="info">
         <div class="main-content">
@@ -181,8 +163,8 @@ $id_member = query("SELECT id_member From register where username='$_SESSION[use
                     </div>
                     <div class="bottom">
                         <center>
-                            <span class="credit">Created By <a href="#">KUYJogja</a> | </span>
-                            <span class="far fa-copyright"></span> 2020 All rights reserved.
+                            <span class="credit">Created By <a href="#">LootBox</a> | </span>
+                            <span class="far fa-copyright"></span> 2022 All rights reserved.
                         </center>
                     </div>
                 </div>

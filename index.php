@@ -284,8 +284,8 @@ if (isset($_POST['login'])) {
           </div>
           <div class="bottom">
             <center>
-              <span class="credit">Created By <a href="#">KUYJogja</a> | </span>
-              <span class="far fa-copyright"></span> 2020 All rights reserved.
+              <span class="credit">Created By <a href="#">LootBox</a> | </span>
+              <span class="far fa-copyright"></span> 2022 All rights reserved.
             </center>
           </div>
         </div>

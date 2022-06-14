@@ -119,21 +119,6 @@ $id_member = query("SELECT id_member From register where username='$_SESSION[use
       </div>
     </div>
   </div>
-  <!-- author -->
-  <!-- <div class="row justify-content-center">
-        <div class="col-lg-6 justify-content-center d-flex">
-          <figure class="figure">
-            <a href="#">
-              <img src="img/zalfa3.jpg" class="figure-img img-fluid rounded-circle" alt="zlf">
-              <figcaption class="figure-caption">
-                <h5>IZAL</h5>
-                <p>author</p>
-              </figcaption>
-            </a>
-          </figure>
-        </div>
-      </div>-->
-
 
   <footer class="footer mt-auto py-3" id="info">
     <div class="main-content">
@@ -149,8 +134,8 @@ $id_member = query("SELECT id_member From register where username='$_SESSION[use
           </div>
           <div class="bottom">
             <center>
-              <span class="credit">Created By <a href="#">KUYJogja</a> | </span>
-              <span class="far fa-copyright"></span> 2020 All rights reserved.
+              <span class="credit">Created By <a href="#">LootBox</a> | </span>
+              <span class="far fa-copyright"></span> 2022 All rights reserved.
             </center>
           </div>
         </div>
