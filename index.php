@@ -181,7 +181,7 @@ if (isset($_POST['login'])) {
         <div class="col">
           <div class="row">
             <div class="col">
-              <h1 class="display-5"><span>AMAZING</span> Place <br> With Traditional <span>CULTURE</h1>
+              <h1 class="display-5"><span>AMAZING</span> Platform <br> With New <span>CINEMATIC EXPERINCE</h1>
               <a class="btn btn-secondary tombol" href="#movie">View More</a>
             </div>
           </div>

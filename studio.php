@@ -47,68 +47,71 @@ if (isset($_POST['submit'])) {
     <title>Studio</title>
 </head>
 
-<body>
-    <div class="container mb-5">
+<body style="background-image:url(img/back-studio.jpg); background-repeat:no-repeat; background-size:cover;">
+    <div class="container mb-5 mt-5">
+    <div class="shadow p-3 mb-5 bg-body rounded mt-5 border rounded">
         <div class="row justify-content-center">
             <div class="col-10">
                 <a href="tampil.php?id_artikel=<?= $id; ?>&id_member=<?= $member?>" class="btn btn-secondary mt-5 mb-3" style="float: right;">Back</a>
             </div>
         </div>
-        <form action="" method="POST">
-            <div class="row mt-5 justify-content-center">
-                <div class="mb-3 col-5">
-                    <input type="hidden" class="form-control" name="id_member" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap" value="<?= $_GET['id_member'] ?>">
+       
+            <form action="" method="POST">
+                <div class="row mt-5 justify-content-center">
+                    <div class="mb-3 col-5">
+                        <input type="hidden" class="form-control" name="id_member" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap" value="<?= $_GET['id_member'] ?>" >
+                    </div>
+                    <div class="mb-3 col-5">
+                        <input type="hidden" class="form-control" name="id_artikel" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap" value="<?= $_GET['id_artikel'] ?>">
+                    </div>
+                    <div class="mb-3 col-5">
+                        <input type="text" class="form-control" name="nama" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap" required>
+                    </div>
+                    <div class="mb-3 col-5">
+                        <input type="date" class="form-control" name="tgl_pesan" id="date" aria-describedby="emailHelp" required>
+                    </div>
+                    <div class="mb-5 col-5">
+                        <select class="form-select" name="jam" aria-label="Default select example" required>
+                            <option selected>Pilih Jam Menonton</option>
+                            <option value="15.00">15.00 WIB</option>
+                            <option value="17.00">17.00 WIB</option>
+                            <option value="19.00">19.00 WIB</option>
+                            <option value="21.00">21.00 WIB</option>
+                            <option value="23.00">23.00 WIB</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="mb-3 col-5">
-                    <input type="hidden" class="form-control" name="id_artikel" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap" value="<?= $_GET['id_artikel'] ?>">
+                <div class="row mt-6 justify-content-center">
+                    <div class="col-10">
+                        <h1 style="text-align: center; color: white; background-color: black; height: 200px; line-height: 180px;">Layar Bioskop</h1>
+                    </div>
                 </div>
-                <div class="mb-3 col-5">
-                    <input type="text" class="form-control" name="nama" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Lengkap">
+                <div class="row mt-5 justify-content-center">
+                    <div class="col-9" style="text-align: center;">
+                        <?php $chairs = query("SELECT * FROM kursi");
+                        
+                        $i = 1; ?>
+                        <?php foreach ($chairs as $chair) : ?>
+                            <?php $tickets = query("SELECT * FROM tiket where id_artikel=$id and id_kursi='$chair[id_kursi]'");
+                            // var_dump(empty($tickets));
+                            // exit;
+                            ?>
+                            <input type="radio" class="btn-check" name="options" value="<?= $chair['id_kursi']; ?>" id="option<?= $i; ?>" autocomplete="off" <?php if ($tickets ==  true) {
+                                echo "disabled";
+                            }else {
+                                echo "actived";
+                            } ?>>
+                            <label class="btn btn-outline-secondary" for="option<?= $i++; ?>" style="width: 52px;"><?= $chair['nomor_kursi']; ?></label>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
-                <div class="mb-3 col-5">
-                    <input type="date" class="form-control" name="tgl_pesan" id="date" aria-describedby="emailHelp">
+                <div class="row justify-content-center">
+                    <div class="col-2 text-center">
+                        <button class="btn btn-primary mt-5 mb-3 px-5" name="submit" type="submit">Pesan</button>
+                    </div>
                 </div>
-                <div class="mb-5 col-5">
-                    <select class="form-select" name="jam" aria-label="Default select example">
-                        <option selected>Pilih Jam Menonton</option>
-                        <option value="15.00">15.00 WIB</option>
-                        <option value="17.00">17.00 WIB</option>
-                        <option value="19.00">19.00 WIB</option>
-                        <option value="21.00">21.00 WIB</option>
-                        <option value="23.00">23.00 WIB</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row mt-6 justify-content-center">
-                <div class="col-10">
-                    <h1 style="text-align: center; color: white; background-color: black; height: 200px; line-height: 180px;">Layar Bioskop</h1>
-                </div>
-            </div>
-            <div class="row mt-5 justify-content-center">
-                <div class="col-9" style="text-align: center;">
-                    <?php $chairs = query("SELECT * FROM kursi");
-                    
-                    $i = 1; ?>
-                    <?php foreach ($chairs as $chair) : ?>
-                        <?php $tickets = query("SELECT * FROM tiket where id_artikel=$id and id_kursi='$chair[id_kursi]'");
-                        // var_dump(empty($tickets));
-                        // exit;
-                        ?>
-                        <input type="radio" class="btn-check" name="options" value="<?= $chair['id_kursi']; ?>" id="option<?= $i; ?>" autocomplete="off" <?php if ($tickets ==  true) {
-                            echo "disabled";
-                        }else {
-                            echo "actived";
-                        } ?>>
-                        <label class="btn btn-outline-secondary" for="option<?= $i++; ?>" style="width: 52px;"><?= $chair['nomor_kursi']; ?></label>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-2 text-center">
-                    <button class="btn btn-primary mt-5 px-5" name="submit" type="submit">Pesan</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>

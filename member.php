@@ -68,7 +68,7 @@ $id_member = query("SELECT id_member From register where username='$_SESSION[use
                 <div class="col">
                     <div class="row">
                         <div class="col">
-                            <h1 class="display-5"><span>AMAZING</span> Place <br> With Traditional <span>CULTURE</h1>
+                            <h1 class="display-5"><span>AMAZING</span> Platform <br> With New <span>CINEMATIC EXPERINCE</h1>
                             <a class="btn btn-secondary tombol" href="#">Gallery</a>
                         </div>
                     </div>
@@ -84,22 +84,22 @@ $id_member = query("SELECT id_member From register where username='$_SESSION[use
                 <div class="row">
                     <div class="col-lg">
                         <a href="#">
-                            <img src="img/Path 2.png" alt="path" class="float-left">
-                            <h4>GAMING</h4>
+                            <img src="img/horor.png" alt="path" class="float-left" width="59px">
+                            <h4>HOROR</h4>
                             <p>Friendship on gaming make new experiences</p>
                         </a>
                     </div>
                     <div class="col-lg">
                         <a href="">
-                            <img src="img/gunung.png" alt="bola" class="float-left">
-                            <h4>ADVENTURES</h4>
+                            <img src="img/action.png" alt="bola" class="float-left" width="59px">
+                            <h4>ACTION</h4>
                             <p>The Nature make you refresh and brave</p>
                         </a>
                     </div>
                     <div class="col-lg">
                         <a href="">
-                            <img src="img/bola.png" alt="path" class="float-left">
-                            <h4>SPORTS</h4>
+                            <img src="img/drama.png" alt="path" class="float-left" width="59px">
+                            <h4>DRAMA</h4>
                             <p>Get the real Friendship in sports and make you sportsmanship</p>
                         </a>
                     </div>
