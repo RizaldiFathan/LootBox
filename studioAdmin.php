@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
         <div class="shadow p-3 mb-5 bg-body rounded mt-5 border rounded">
             <div class="row justify-content-center">
                 <div class="col-10">
-                    <a href="tampil.php?id_artikel=<?= $id; ?>&id_member=<?= $member ?>" class="btn btn-secondary mt-5 mb-3" style="float: right;">Back</a>
+                    <a href="tampil_admin.php?id_artikel=<?= $id; ?>&id_member=<?= $member ?>" class="btn btn-secondary mt-5 mb-3" style="float: right;">Back</a>
                 </div>
             </div>
 

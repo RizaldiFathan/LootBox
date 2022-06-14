@@ -21,7 +21,7 @@ $movie = query("SELECT * FROM movies WHERE id_artikel = $id")[0];
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Detail Movie</title>
+    <title>Deskripsi Film</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 
@@ -30,7 +30,7 @@ $movie = query("SELECT * FROM movies WHERE id_artikel = $id")[0];
         <div class="shadow p-3 mb-5 bg-body rounded mt-5 border rounded pb-5">
             <div class="row justify-content-center">
                 <div class="col-10">
-                    <a href="member.php" class="btn btn-secondary mt-3 mb-3" style="float: right;">Back</a>
+                    <a href="admin.php" class="btn btn-secondary mt-3 mb-3" style="float: right;">Back</a>
                 </div>
             </div>
             <div class="row g-0 mt-5 justify-content-center">
@@ -50,7 +50,7 @@ $movie = query("SELECT * FROM movies WHERE id_artikel = $id")[0];
                             </div>
                         </div>
 
-                        <a href="studio.php?id_artikel=<?= $id; ?>&id_member=<?php echo $member; ?>" class="btn btn-primary col-2">Pesan</a>
+                        <a href="studioAdmin.php?id_artikel=<?= $id; ?>&id_member=<?php echo $member; ?>" class="btn btn-primary col-2">Pesan</a>
                     </div>
                 </div>
             </div>

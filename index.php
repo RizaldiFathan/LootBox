@@ -100,7 +100,7 @@ if (isset($_POST['login'])) {
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link" href="index.php">Home</a>
-          <a class="nav-item active" href="event.php">Event</a>
+          <a class="nav-item active" href="event.php">Movies</a>
           <a class="nav-item active" href="#info">About</a>
           <a class="btn btn-warning tombol" href="#" data-toggle="modal" data-target="#login">JOIN US</a>
         </div>
@@ -197,23 +197,23 @@ if (isset($_POST['login'])) {
         <div class="row">
           <div class="col-lg">
             <a href="#">
-              <img src="img/Path 2.png" alt="path" class="float-left">
-              <h4>GAMING</h4>
-              <p>Friendship on gaming make new experiences</p>
+              <img src="img/horor.png" alt="path" class="float-left" width="59px">
+              <h4>HOROR</h4>
+              <p>Believe nothing you hear, and only one half that you see.</p>
             </a>
           </div>
           <div class="col-lg">
             <a href="">
-              <img src="img/gunung.png" alt="bola" class="float-left">
-              <h4>ADVENTURES</h4>
-              <p>The Nature make you refresh and brave</p>
+              <img src="img/action.png" alt="bola" class="float-left" width="59px">
+              <h4>ACTION</h4>
+              <p>Life's a journey tobe experienced, not a problem tobe solved</p>
             </a>
           </div>
           <div class="col-lg">
             <a href="">
-              <img src="img/bola.png" alt="path" class="float-left">
-              <h4>SPORTS</h4>
-              <p>Get the real Friendship in sports and make you sportsmanship</p>
+              <img src="img/drama.png" alt="path" class="float-left" width="59px">
+              <h4>DRAMA</h4>
+              <p>You have nothing to fear, if you have nothing to hide.</p>
             </a>
           </div>
         </div>
@@ -249,7 +249,7 @@ if (isset($_POST['login'])) {
                           </div>
                         </div>
 
-                        <a type="button" href="tampil.php?id_artikel=<?= $movie['id_artikel']; ?>" class="btn btn-outline-secondary mt-1">Tampil</a>
+                        <a type="button" href="tampil.php?id_artikel=<?= $movie['id_artikel']; ?>&id_member=" class="btn btn-outline-secondary mt-1">Tampil</a>
                       </div>
                     </div>
                   </div>
@@ -261,23 +261,16 @@ if (isset($_POST['login'])) {
       </div>
     </div>
   </div>
-  <!-- author -->
-  <!-- <div class="row justify-content-center">
-        <div class="col-lg-6 justify-content-center d-flex">
-          <figure class="figure">
-            <a href="#">
-              <img src="img/zalfa3.jpg" class="figure-img img-fluid rounded-circle" alt="zlf">
-              <figcaption class="figure-caption">
-                <h5>IZAL</h5>
-                <p>author</p>
-              </figcaption>
-            </a>
-          </figure>
-        </div>
-      </div>-->
-
-
-  <footer class="footer mt-auto py-3" id="info">
+  <div class="container mb-5">
+    <div class="row text-center">
+      <div class="col">
+        <h2 class="mb-3">Quote Of the Week</h2>
+        <h5><i>What's coming will come and we'll meet it when it does</i></h5>
+        <span>~Rubeus Hagrid~</span>
+      </div>
+    </div>
+  </div>
+  <footer class="footer mt-5 py-3" id="info">
     <div class="main-content">
       <div class="left box">
         <h2>About us</h2>

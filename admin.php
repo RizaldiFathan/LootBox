@@ -11,6 +11,8 @@ if (!isset($_SESSION["username"])) {
   exit;
 }
 
+$id_member = query("SELECT id_member From register where username='$_SESSION[username]'");
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -34,7 +36,7 @@ if (!isset($_SESSION["username"])) {
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
 
-  <title>kel10</title>
+  <title>Dashboard | Admin</title>
 </head>
 
 <body>
@@ -47,9 +49,8 @@ if (!isset($_SESSION["username"])) {
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="#">Home</a>
-          <a class="nav-item active" href="eventadmin.php">Event</a>
-          <a class="nav-item active" href="#info">About</a>
+          <a class="nav-item nav-link" href="#">Movies</a>
+          <a class="nav-item active" href="tiketBox.php">Ticket Box</a>
           <a class="nav-item active" href="upload.php">UPLOAD</a>
           <a class="btn btn-warning tombol" href="logout.php">LOGOUT</a>
         </div>
@@ -57,15 +58,13 @@ if (!isset($_SESSION["username"])) {
     </div>
   </nav>
 
-  <!-- jumbotron -->
-  <div class="jumbotron">
+  <div class="jumbotron" style="margin-bottom: 90px;">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col">
           <div class="row">
             <div class="col">
-              <h1 class="display-5"><span>AMAZING</span> Place <br> With Traditional <span>CULTURE</h1>
-              <a class="btn btn-secondary tombol" href="#">Gallery</a>
+              <h1 class="display-5"><span>AMAZING</span> Platform <br> With New <span>CINEMATIC EXPERINCE</h1>
             </div>
           </div>
         </div>
@@ -74,35 +73,6 @@ if (!isset($_SESSION["username"])) {
   </div>
 
   <!-- container -->
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-10 info-panel">
-        <div class="row">
-          <div class="col-lg">
-            <a href="#">
-              <img src="img/Path 2.png" alt="path" class="float-left">
-              <h4>GAMING</h4>
-              <p>Friendship on gaming make new experiences</p>
-            </a>
-          </div>
-          <div class="col-lg">
-            <a href="">
-              <img src="img/gunung.png" alt="bola" class="float-left">
-              <h4>ADVENTURES</h4>
-              <p>The Nature make you refresh and brave</p>
-            </a>
-          </div>
-          <div class="col-lg">
-            <a href="">
-              <img src="img/bola.png" alt="path" class="float-left">
-              <h4>SPORTS</h4>
-              <p>Get the real Friendship in sports and make you sportsmanship</p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <!-- <div class="penutup"> -->
   <div class="container">
     <div class="container post">
@@ -131,7 +101,11 @@ if (!isset($_SESSION["username"])) {
 
                           </div>
                         </div>
-                        <a type="button" href="tampil.php?id_artikel=<?= $movie["id_artikel"]; ?>" class="btn btn-outline-secondary">Tampil</a>
+                        <?php foreach ($id_member as $member) : ?>
+
+                          <a type="button" href="tampil_admin.php?id_artikel=<?= $movie['id_artikel']; ?>&id_member=<?= $member['id_member']; ?>" class="btn btn-outline-secondary mt-1">Tampil</a>
+
+                        <?php endforeach ?>
                         <a type="button" href="ubah.php?id_artikel=<?= $movie["id_artikel"]; ?>" class="btn btn-outline-success">Edit</a>
                         <a type="button" href="hapus.php?id_artikel=<?= $movie["id_artikel"]; ?>" onclick="return confirm('yakin?');" class="btn btn-outline-danger">Hapus</a>
                       </div>

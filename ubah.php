@@ -65,67 +65,69 @@ if (isset($_POST["submit"])) {
 
 <body>
   <div class="container mt-5">
-    <div class="row justify-content-end">
-      <div class="col-1">
-        <a href="admin.php" class="btn btn-secondary col-12 mb-3">Back</a>
-      </div>
-    </div>
-    <form method="post" enctype="multipart/form-data" action="">
-      <input type="hidden" name="id_artikel" value="<?= $movie["id_artikel"]; ?>">
-      <input type="hidden" name="gambarLama" value="<?= $movie["gambar"]; ?>">
-      <div class="row g-2 align-items-center">
-        <label for="judul_film" class="col-form-label col-sm-2">Judul Film</label>
-        <div class="col-sm-10">
-          <input type="text" id="judul_film" value="<?= $movie["judul_artikel"]; ?>" name="judul_film" class="form-control" aria-describedby="movieHelpInline" autofocus required>
+    <div class="shadow p-5 mb-5 bg-body rounded mt-5 border rounded pb-5">
+      <div class="row justify-content-end">
+        <div class="col-1">
+          <a href="admin.php" class="btn btn-secondary col-12 mb-5">Back</a>
         </div>
       </div>
-      <div class="row g-2 align-items-center mt-3">
-        <label for="gambar_film" class="form-label col-sm-2">Upload Gambar</label>
-        <div class="col-sm-10">
-          <img src="img/<?= $movie['gambar']; ?>" width="40"> <br>
-          <input class="form-control" type="file" id="gambar_film" name="gambar">
+      <form method="post" enctype="multipart/form-data" action="">
+        <input type="hidden" name="id_artikel" value="<?= $movie["id_artikel"]; ?>">
+        <input type="hidden" name="gambarLama" value="<?= $movie["gambar"]; ?>">
+        <div class="row g-2 align-items-center">
+          <label for="judul_film" class="col-form-label col-sm-2">Judul Film</label>
+          <div class="col-sm-10">
+            <input type="text" id="judul_film" value="<?= $movie["judul_artikel"]; ?>" name="judul_film" class="form-control" aria-describedby="movieHelpInline" autofocus required>
+          </div>
         </div>
-      </div>
-      <!-- <label for="artike">Upload Gambar</label>
+        <div class="row g-2 align-items-center mt-3">
+          <label for="gambar_film" class="form-label col-sm-2">Upload Gambar</label>
+          <div class="col-sm-10">
+            <img src="img/<?= $movie['gambar']; ?>" width="40"> <br>
+            <input class="form-control" type="file" id="gambar_film" name="gambar">
+          </div>
+        </div>
+        <!-- <label for="artike">Upload Gambar</label>
     <input type="file" name="artikel" id="artikel"> -->
-      <div class="row g-2 align-items-center mt-3">
-        <label for="floatingTextarea2" class="col-sm-2">Deskripsi Film</label>
-        <div class="col-sm-10">
+        <div class="row g-2 align-items-center mt-3">
+          <label for="floatingTextarea2" class="col-sm-2">Deskripsi Film</label>
+          <div class="col-sm-10">
 
-          <!-- <input class="form-control" type="text" id="deskripsi" name="deskripsi" value="<?= $movie["deskripsi"]; ?>"> -->
-          <textarea class="form-control texteditor" name="deskripsi" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"><?= $movie["deskripsi"]; ?></textarea>
+            <!-- <input class="form-control" type="text" id="deskripsi" name="deskripsi" value="<?= $movie["deskripsi"]; ?>"> -->
+            <textarea class="form-control texteditor" name="deskripsi" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"><?= $movie["deskripsi"]; ?></textarea>
+          </div>
         </div>
-      </div>
-      <div class="row g-2 align-items-center mt-3">
-        <label for="kategori" class="col-sm-2">Kategori</label>
-        <div class="col-sm-10">
-          <select class="form-control" name="kategori_film" aria-label="Default select example">
-            <option value="<?= $movie["kategori"]; ?>" selected>--Pilih Jika Mengganti Kategori--</option>
-            <option value="Horor">Horor</option>
-            <option value="Action">Action</option>
-            <option value="Drama">Drama</option>
-          </select>
+        <div class="row g-2 align-items-center mt-3">
+          <label for="kategori" class="col-sm-2">Kategori</label>
+          <div class="col-sm-10">
+            <select class="form-control" name="kategori_film" aria-label="Default select example">
+              <option value="<?= $movie["kategori"]; ?>" selected>--Pilih Jika Mengganti Kategori--</option>
+              <option value="Horor">Horor</option>
+              <option value="Action">Action</option>
+              <option value="Drama">Drama</option>
+            </select>
+          </div>
         </div>
-      </div>
-      <div class="row g-2 align-items-center mt-3">
-        <label for="rating" class="col-form-label col-sm-2">Rating Film</label>
-        <div class="col-sm-10">
-          <input type="number" id="rating" value="<?= $movie["rating"]; ?>" name="rating" class="form-control" aria-describedby="movieHelpInline" autofocus required>
+        <div class="row g-2 align-items-center mt-3">
+          <label for="rating" class="col-form-label col-sm-2">Rating Film</label>
+          <div class="col-sm-10">
+            <input type="number" id="rating" value="<?= $movie["rating"]; ?>" name="rating" class="form-control" aria-describedby="movieHelpInline" autofocus required>
+          </div>
         </div>
-      </div>
-      <div class="row g-2 align-items-center mt-3">
-        <label for="harga_tiket" class="col-form-label col-sm-2">Harga Tiket</label>
-        <div class="col-sm-10">
-          <input type="number" id="harga_tiket" value="<?= $movie["harga_tiket"]; ?>" name="harga_tiket" class="form-control" aria-describedby="movieHelpInline" autofocus required>
+        <div class="row g-2 align-items-center mt-3">
+          <label for="harga_tiket" class="col-form-label col-sm-2">Harga Tiket</label>
+          <div class="col-sm-10">
+            <input type="number" id="harga_tiket" value="<?= $movie["harga_tiket"]; ?>" name="harga_tiket" class="form-control" aria-describedby="movieHelpInline" autofocus required>
+          </div>
         </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col text-center">
-          <button type="submit" class="btn btn-primary mt-5 mb-5 col-2" name="submit">Update</button>
+        <div class="row justify-content-center">
+          <div class="col text-center">
+            <button type="submit" class="btn btn-primary mt-5 mb-5 col-2" name="submit">Update</button>
+          </div>
         </div>
-      </div>
-      <!-- </div> -->
-    </form>
+        <!-- </div> -->
+      </form>
+    </div>
   </div>
 
   <!-- panggil jquery -->

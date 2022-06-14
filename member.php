@@ -38,7 +38,7 @@ $id_member = query("SELECT id_member From register where username='$_SESSION[use
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
 
-    <title>kel10</title>
+    <title>LootBox | Login</title>
 </head>
 
 <body>
@@ -52,7 +52,7 @@ $id_member = query("SELECT id_member From register where username='$_SESSION[use
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
                     <a class="nav-item nav-link" href="#">Home</a>
-                    <a class="nav-item active" href="eventadmin.php">Event</a>
+                    <a class="nav-item active" href="eventMember.php">Movies</a>
                     <a class="nav-item active" href="#info">About</a>
                     <!-- <a class="nav-item active" href="upload.php">UPLOAD</a> -->
                     <a class="btn btn-warning tombol" href="logout.php">LOGOUT</a>
@@ -69,7 +69,7 @@ $id_member = query("SELECT id_member From register where username='$_SESSION[use
                     <div class="row">
                         <div class="col">
                             <h1 class="display-5"><span>AMAZING</span> Platform <br> With New <span>CINEMATIC EXPERINCE</h1>
-                            <a class="btn btn-secondary tombol" href="#">Gallery</a>
+                            <a class="btn btn-secondary tombol" href="#movie">View More</a>
                         </div>
                     </div>
                 </div>
@@ -86,21 +86,21 @@ $id_member = query("SELECT id_member From register where username='$_SESSION[use
                         <a href="#">
                             <img src="img/horor.png" alt="path" class="float-left" width="59px">
                             <h4>HOROR</h4>
-                            <p>Friendship on gaming make new experiences</p>
+                            <p>Believe nothing you hear, and only one half that you see.</p>
                         </a>
                     </div>
                     <div class="col-lg">
                         <a href="">
                             <img src="img/action.png" alt="bola" class="float-left" width="59px">
                             <h4>ACTION</h4>
-                            <p>The Nature make you refresh and brave</p>
+                            <p>Life's a journey tobe experienced, not a problem tobe solved</p>
                         </a>
                     </div>
                     <div class="col-lg">
                         <a href="">
                             <img src="img/drama.png" alt="path" class="float-left" width="59px">
                             <h4>DRAMA</h4>
-                            <p>Get the real Friendship in sports and make you sportsmanship</p>
+                            <p>You have nothing to fear, if you have nothing to hide.</p>
                         </a>
                     </div>
                 </div>

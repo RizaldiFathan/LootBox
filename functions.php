@@ -131,6 +131,12 @@ function hapus($id)
 	mysqli_query($conn, "DELETE FROM movies WHERE id_artikel = $id");
 	return mysqli_affected_rows($conn);
 }
+function hapusFilm($id)
+{
+	global $conn;
+	mysqli_query($conn, "DELETE FROM tiket WHERE id_tiket = $id");
+	return mysqli_affected_rows($conn);
+}
 
 function registrasi($data)
 {

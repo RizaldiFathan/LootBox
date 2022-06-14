@@ -88,10 +88,10 @@ if (isset($_POST['login'])) {
   <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
-  <title>Event</title>
+  <title>Movies</title>
   <style>
     .slide {
-      margin-top: -86px;
+      /* margin-top: -86px; */
       margin-bottom: 90px;
     }
 
@@ -141,7 +141,7 @@ if (isset($_POST['login'])) {
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
           <a class="nav-item active" href="index.php">Home</a>
-          <a class="nav-item nav-link" href="event.php">Event</a>
+          <a class="nav-item nav-link" href="event.php">Movies</a>
           <a class="nav-item active" href="#info">About</a>
           <a class="btn btn-warning tombol" href="#" data-toggle="modal" data-target="#login">JOIN US</a>
         </div>
@@ -241,7 +241,7 @@ if (isset($_POST['login'])) {
         <span class="sr-only">Next</span>
       </a>
     </div>
-    <div class="container">
+    <div class="container" id="movies">
       <div class="container post">
         <div class="row justify-content-center">
           <div class="col-12">
@@ -259,8 +259,17 @@ if (isset($_POST['login'])) {
                           <h5 class="card-title"><?= $movie['judul_artikel']; ?></h5>
                           <p class="card-text"><?php $desc = substr($movie['deskripsi'], 0, 90);
                                                 echo $desc . "..." ?></p>
-                          <p class="card-text"><small class="text-muted"><?= $movie['kategori']; ?></small></p>
-                          <a type="button" href="" class="btn btn-outline-secondary">Tampil</a>
+                          <div class="row">
+                            <div class="col">
+                              <p class="card-text"><small class="text-muted"><?= $movie['kategori']; ?></small></p>
+                            </div>
+                            <div class="col">
+                              <p class="card-text" style="text-align: right;"><small class="text-muted"><?= $movie['rating']; ?></small><img src="img/star.png" class="ml-1" alt="" style="width: 12px;"></p>
+
+                            </div>
+                          </div>
+
+                          <a type="button" href="tampil.php?id_artikel=<?= $movie['id_artikel']; ?>&id_member=" class="btn btn-outline-secondary mt-1">Tampil</a>
                         </div>
                       </div>
                     </div>
