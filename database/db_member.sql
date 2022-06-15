@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2022 at 05:16 PM
+-- Generation Time: Jun 15, 2022 at 12:24 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -29,127 +29,143 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `kursi` (
   `id_kursi` int(11) NOT NULL,
-  `nomor_kursi` varchar(5) NOT NULL,
-  `is_active` varchar(10) NOT NULL
+  `nomor_kursi` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `kursi`
 --
 
-INSERT INTO `kursi` (`id_kursi`, `nomor_kursi`, `is_active`) VALUES
-(1, 'A1', 'disabled'),
-(2, 'A2', 'disabled'),
-(3, 'A3', 'disabled'),
-(4, 'A4', 'actived'),
-(5, 'A5', 'disabled'),
-(6, 'A6', 'actived'),
-(7, 'A7', 'actived'),
-(8, 'A8', 'actived'),
-(9, 'A9', 'actived'),
-(10, 'A10', 'actived'),
-(11, 'A11', 'actived'),
-(12, 'A12', 'actived'),
-(13, 'A13', 'actived'),
-(14, 'A14', 'actived'),
-(15, 'B1', 'actived'),
-(16, 'B2', 'actived'),
-(17, 'B3', 'actived'),
-(18, 'B4', 'actived'),
-(19, 'B5', 'actived'),
-(20, 'B6', 'actived'),
-(21, 'B7', 'actived'),
-(22, 'B8', 'actived'),
-(23, 'B9', 'actived'),
-(24, 'B10', 'actived'),
-(25, 'B11', 'actived'),
-(26, 'B12', 'actived'),
-(27, 'B13', 'actived'),
-(28, 'B14', 'actived'),
-(29, 'C1', 'actived'),
-(30, 'C2', 'actived'),
-(31, 'C3', 'actived'),
-(32, 'C4', 'actived'),
-(33, 'C5', 'actived'),
-(34, 'C6', 'actived'),
-(35, 'C7', 'actived'),
-(36, 'C8', 'actived'),
-(37, 'C9', 'actived'),
-(38, 'C10', 'actived'),
-(39, 'C11', 'actived'),
-(40, 'C12', 'actived'),
-(41, 'C13', 'actived'),
-(42, 'C14', 'actived'),
-(43, 'D1', 'actived'),
-(44, 'D2', 'actived'),
-(45, 'D3', 'actived'),
-(46, 'D4', 'actived'),
-(47, 'D5', 'actived'),
-(48, 'D6', 'actived'),
-(49, 'D7', 'actived'),
-(50, 'D8', 'actived'),
-(51, 'D9', 'actived'),
-(52, 'D10', 'actived'),
-(53, 'D11', 'actived'),
-(54, 'D12', 'actived'),
-(55, 'D13', 'actived'),
-(56, 'D14', 'actived'),
-(57, 'E1', 'actived'),
-(58, 'E2', 'actived'),
-(59, 'E3', 'actived'),
-(60, 'E4', 'actived'),
-(61, 'E5', 'actived'),
-(62, 'E6', 'actived'),
-(63, 'E7', 'actived'),
-(64, 'E8', 'actived'),
-(65, 'E9', 'actived'),
-(66, 'E10', 'actived'),
-(67, 'E11', 'actived'),
-(68, 'E12', 'actived'),
-(69, 'E13', 'actived'),
-(70, 'E14', 'actived'),
-(71, 'F1', 'actived'),
-(72, 'F2', 'actived'),
-(73, 'F3', 'actived'),
-(74, 'F4', 'actived'),
-(75, 'F5', 'actived'),
-(76, 'F6', 'actived'),
-(77, 'F7', 'actived'),
-(78, 'F8', 'actived'),
-(79, 'F9', 'actived'),
-(80, 'F10', 'actived'),
-(81, 'F11', 'actived'),
-(82, 'F12', 'actived'),
-(83, 'F13', 'actived'),
-(84, 'F14', 'actived'),
-(85, 'G1', 'actived'),
-(86, 'G2', 'actived'),
-(87, 'G3', 'actived'),
-(88, 'G4', 'actived'),
-(89, 'G5', 'actived'),
-(90, 'G6', 'actived'),
-(91, 'G7', 'actived'),
-(92, 'G8', 'actived'),
-(93, 'G9', 'actived'),
-(94, 'G10', 'actived'),
-(95, 'G11', 'actived'),
-(96, 'G12', 'actived'),
-(97, 'G13', 'actived'),
-(98, 'G14', 'actived'),
-(99, 'H1', 'actived'),
-(100, 'H2', 'actived'),
-(101, 'H3', 'actived'),
-(102, 'H4', 'actived'),
-(103, 'H5', 'actived'),
-(104, 'H6', 'actived'),
-(105, 'H7', 'actived'),
-(106, 'H8', 'actived'),
-(107, 'H9', 'actived'),
-(108, 'H10', 'actived'),
-(109, 'H11', 'actived'),
-(110, 'H12', 'actived'),
-(111, 'H13', 'actived'),
-(112, 'H14', 'actived');
+INSERT INTO `kursi` (`id_kursi`, `nomor_kursi`) VALUES
+(1, 'A1'),
+(2, 'A2'),
+(3, 'A3'),
+(4, 'A4'),
+(5, 'A5'),
+(6, 'A6'),
+(7, 'A7'),
+(8, 'A8'),
+(9, 'A9'),
+(10, 'A10'),
+(11, 'A11'),
+(12, 'A12'),
+(13, 'A13'),
+(14, 'A14'),
+(15, 'B1'),
+(16, 'B2'),
+(17, 'B3'),
+(18, 'B4'),
+(19, 'B5'),
+(20, 'B6'),
+(21, 'B7'),
+(22, 'B8'),
+(23, 'B9'),
+(24, 'B10'),
+(25, 'B11'),
+(26, 'B12'),
+(27, 'B13'),
+(28, 'B14'),
+(29, 'C1'),
+(30, 'C2'),
+(31, 'C3'),
+(32, 'C4'),
+(33, 'C5'),
+(34, 'C6'),
+(35, 'C7'),
+(36, 'C8'),
+(37, 'C9'),
+(38, 'C10'),
+(39, 'C11'),
+(40, 'C12'),
+(41, 'C13'),
+(42, 'C14'),
+(43, 'D1'),
+(44, 'D2'),
+(45, 'D3'),
+(46, 'D4'),
+(47, 'D5'),
+(48, 'D6'),
+(49, 'D7'),
+(50, 'D8'),
+(51, 'D9'),
+(52, 'D10'),
+(53, 'D11'),
+(54, 'D12'),
+(55, 'D13'),
+(56, 'D14'),
+(57, 'E1'),
+(58, 'E2'),
+(59, 'E3'),
+(60, 'E4'),
+(61, 'E5'),
+(62, 'E6'),
+(63, 'E7'),
+(64, 'E8'),
+(65, 'E9'),
+(66, 'E10'),
+(67, 'E11'),
+(68, 'E12'),
+(69, 'E13'),
+(70, 'E14'),
+(71, 'F1'),
+(72, 'F2'),
+(73, 'F3'),
+(74, 'F4'),
+(75, 'F5'),
+(76, 'F6'),
+(77, 'F7'),
+(78, 'F8'),
+(79, 'F9'),
+(80, 'F10'),
+(81, 'F11'),
+(82, 'F12'),
+(83, 'F13'),
+(84, 'F14'),
+(85, 'G1'),
+(86, 'G2'),
+(87, 'G3'),
+(88, 'G4'),
+(89, 'G5'),
+(90, 'G6'),
+(91, 'G7'),
+(92, 'G8'),
+(93, 'G9'),
+(94, 'G10'),
+(95, 'G11'),
+(96, 'G12'),
+(97, 'G13'),
+(98, 'G14'),
+(99, 'H1'),
+(100, 'H2'),
+(101, 'H3'),
+(102, 'H4'),
+(103, 'H5'),
+(104, 'H6'),
+(105, 'H7'),
+(106, 'H8'),
+(107, 'H9'),
+(108, 'H10'),
+(109, 'H11'),
+(110, 'H12'),
+(111, 'H13'),
+(112, 'H14');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `log_transaksi`
+--
+
+CREATE TABLE `log_transaksi` (
+  `id_logtrans` int(11) NOT NULL,
+  `id_tiket` int(11) NOT NULL,
+  `nama_pemesan` int(11) NOT NULL,
+  `log_tanggal` date NOT NULL,
+  `log_waktu` varchar(50) NOT NULL,
+  `log_id_artikel` int(11) NOT NULL,
+  `log_id_member` int(11) NOT NULL,
+  `log_id_kursi` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -227,7 +243,8 @@ INSERT INTO `tiket` (`id_tiket`, `nama_pemesan`, `tanggal`, `waktu`, `id_artikel
 (14, 'Farhan Anwar Nugraha', '2022-06-14', '17.00', 24, 22, 5),
 (15, 'Bagas', '2022-06-14', '21.00', 24, 22, 8),
 (16, 'Bagas', '2022-06-17', '17.00', 22, 22, 1),
-(17, 'Izal', '2022-06-15', '21.00', 24, 22, 2);
+(17, 'Izal', '2022-06-15', '21.00', 24, 22, 2),
+(20, 'Izal', '2022-06-02', '17.00', 24, 22, 1);
 
 --
 -- Triggers `tiket`
@@ -239,9 +256,14 @@ WHERE id_kursi = old.id_kursi
 $$
 DELIMITER ;
 DELIMITER $$
-CREATE TRIGGER `update_kursi` AFTER INSERT ON `tiket` FOR EACH ROW UPDATE kursi SET
-is_active = 'disabled'
-WHERE id_kursi = new.id_kursi
+CREATE TRIGGER `delet_tiket` AFTER DELETE ON `tiket` FOR EACH ROW insert into log_transaksi 
+    SET id_tiket = old.id_tiket,
+    nama_pemesan = old.nama_pemesan,
+    log_tanggal = old.tanggal,
+    log_waktu = old.waktu,
+    log_id_artikel = old.id_artikel,
+    log_id_member = old.id_member,
+    log_id_kursi = old.id_kursi
 $$
 DELIMITER ;
 
@@ -254,6 +276,12 @@ DELIMITER ;
 --
 ALTER TABLE `kursi`
   ADD PRIMARY KEY (`id_kursi`);
+
+--
+-- Indexes for table `log_transaksi`
+--
+ALTER TABLE `log_transaksi`
+  ADD PRIMARY KEY (`id_logtrans`);
 
 --
 -- Indexes for table `movies`
@@ -282,6 +310,12 @@ ALTER TABLE `tiket`
 --
 
 --
+-- AUTO_INCREMENT for table `log_transaksi`
+--
+ALTER TABLE `log_transaksi`
+  MODIFY `id_logtrans` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
@@ -297,7 +331,7 @@ ALTER TABLE `register`
 -- AUTO_INCREMENT for table `tiket`
 --
 ALTER TABLE `tiket`
-  MODIFY `id_tiket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_tiket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Constraints for dumped tables
