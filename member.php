@@ -51,7 +51,7 @@ $id_member = query("SELECT id_member From register where username='$_SESSION[use
                 <div class="navbar-nav ml-auto">
                     <a class="nav-item nav-link" href="#">Home</a>
                     <a class="nav-item active" href="eventMember.php">Movies</a>
-                    <a class="nav-item active" href="transaksi.php">Transaksi</a>
+                    <a class="nav-item active" href="transaksi.php?id_member=<?= $_SESSION["username"]?>">Transaksi</a>
                     <a class="nav-item active" href="#info">About</a>
                     <a class="btn btn-warning tombol" href="logout.php">LOGOUT</a>
                 </div>
