@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2022 at 12:24 PM
+-- Generation Time: Jun 20, 2022 at 02:22 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -159,13 +159,21 @@ INSERT INTO `kursi` (`id_kursi`, `nomor_kursi`) VALUES
 CREATE TABLE `log_transaksi` (
   `id_logtrans` int(11) NOT NULL,
   `id_tiket` int(11) NOT NULL,
-  `nama_pemesan` int(11) NOT NULL,
+  `nama_pemesan` varchar(60) NOT NULL,
   `log_tanggal` date NOT NULL,
   `log_waktu` varchar(50) NOT NULL,
   `log_id_artikel` int(11) NOT NULL,
   `log_id_member` int(11) NOT NULL,
   `log_id_kursi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `log_transaksi`
+--
+
+INSERT INTO `log_transaksi` (`id_logtrans`, `id_tiket`, `nama_pemesan`, `log_tanggal`, `log_waktu`, `log_id_artikel`, `log_id_member`, `log_id_kursi`) VALUES
+(3, 24, 'Farhan', '2022-06-19', '15.00', 22, 22, 1),
+(4, 25, 'Nugraha', '2022-06-19', '15.00', 22, 22, 2);
 
 -- --------------------------------------------------------
 
@@ -216,7 +224,7 @@ CREATE TABLE `register` (
 INSERT INTO `register` (`id_member`, `email`, `username`, `password`, `nama_member`, `alamat`, `no_identitas`) VALUES
 (21, 'admin@admin.com', 'admin', '$2y$10$Fv.TNgXKF/gt1roh8mppke663DX7oK0wuiq565i/ktww3wd3Rec0e', 'admin', 'Indonesia', '8888'),
 (22, 'user@gmail.com', 'user', '$2y$10$3sTYYRIePuRy9Q8TrhtBKOjdF96cwZUfKhUj42pyi7XCizNgAFZCm', 'user', 'indonesia', '1111'),
-(23, 'anwarmanw492@gmail.com', 'nana', '$2y$10$I54Qns6NDKGNEI0U49tT/.NW28jllH6TIF0uN9UeALQ8Dl44nk7pi', 'Nananana', 'Keppo', '11111');
+(24, 'FBR@gmail.com', 'user2', '$2y$10$yj9AC9BTDyyovjSrBR2Rou.LXuU6DRr443HFlNNUnWK9j6P2B0S0e', 'user2', 'yk', '748583457389');
 
 -- --------------------------------------------------------
 
@@ -239,31 +247,21 @@ CREATE TABLE `tiket` (
 --
 
 INSERT INTO `tiket` (`id_tiket`, `nama_pemesan`, `tanggal`, `waktu`, `id_artikel`, `id_member`, `id_kursi`) VALUES
-(12, 'Nugraha', '2022-06-15', '19.00', 22, 22, 3),
-(14, 'Farhan Anwar Nugraha', '2022-06-14', '17.00', 24, 22, 5),
-(15, 'Bagas', '2022-06-14', '21.00', 24, 22, 8),
-(16, 'Bagas', '2022-06-17', '17.00', 22, 22, 1),
-(17, 'Izal', '2022-06-15', '21.00', 24, 22, 2),
-(20, 'Izal', '2022-06-02', '17.00', 24, 22, 1);
+(24, 'Farhan', '2022-06-19', '15.00', 22, 22, 1),
+(25, 'Nugraha', '2022-06-19', '15.00', 22, 22, 2);
 
 --
 -- Triggers `tiket`
 --
 DELIMITER $$
-CREATE TRIGGER `delet_kursi` AFTER DELETE ON `tiket` FOR EACH ROW UPDATE kursi 
-SET is_active = "actived"
-WHERE id_kursi = old.id_kursi
-$$
-DELIMITER ;
-DELIMITER $$
-CREATE TRIGGER `delet_tiket` AFTER DELETE ON `tiket` FOR EACH ROW insert into log_transaksi 
-    SET id_tiket = old.id_tiket,
-    nama_pemesan = old.nama_pemesan,
-    log_tanggal = old.tanggal,
-    log_waktu = old.waktu,
-    log_id_artikel = old.id_artikel,
-    log_id_member = old.id_member,
-    log_id_kursi = old.id_kursi
+CREATE TRIGGER `insert_logtiket` AFTER INSERT ON `tiket` FOR EACH ROW insert into log_transaksi 
+    SET id_tiket = new.id_tiket,
+    nama_pemesan = new.nama_pemesan,
+    log_tanggal = new.tanggal,
+    log_waktu = new.waktu,
+    log_id_artikel = new.id_artikel,
+    log_id_member = new.id_member,
+    log_id_kursi = new.id_kursi
 $$
 DELIMITER ;
 
@@ -281,7 +279,10 @@ ALTER TABLE `kursi`
 -- Indexes for table `log_transaksi`
 --
 ALTER TABLE `log_transaksi`
-  ADD PRIMARY KEY (`id_logtrans`);
+  ADD PRIMARY KEY (`id_logtrans`),
+  ADD KEY `log_id_member` (`log_id_member`),
+  ADD KEY `log_id_artikel` (`log_id_artikel`),
+  ADD KEY `log_id_kursi` (`log_id_kursi`);
 
 --
 -- Indexes for table `movies`
@@ -313,7 +314,7 @@ ALTER TABLE `tiket`
 -- AUTO_INCREMENT for table `log_transaksi`
 --
 ALTER TABLE `log_transaksi`
-  MODIFY `id_logtrans` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_logtrans` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `movies`
@@ -325,17 +326,25 @@ ALTER TABLE `movies`
 -- AUTO_INCREMENT for table `register`
 --
 ALTER TABLE `register`
-  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `tiket`
 --
 ALTER TABLE `tiket`
-  MODIFY `id_tiket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_tiket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `log_transaksi`
+--
+ALTER TABLE `log_transaksi`
+  ADD CONSTRAINT `log_transaksi_ibfk_1` FOREIGN KEY (`log_id_member`) REFERENCES `register` (`id_member`),
+  ADD CONSTRAINT `log_transaksi_ibfk_2` FOREIGN KEY (`log_id_artikel`) REFERENCES `movies` (`id_artikel`),
+  ADD CONSTRAINT `log_transaksi_ibfk_3` FOREIGN KEY (`log_id_kursi`) REFERENCES `kursi` (`id_kursi`);
 
 --
 -- Constraints for table `tiket`
