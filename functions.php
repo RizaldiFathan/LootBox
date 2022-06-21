@@ -105,9 +105,6 @@ function ubah($data)
 		$gambar = upload();
 	}
 
-	// var_dump($id,$desc_film,$ch_kategori,$judul_film,$gambarLama,$gambar);
-	// exit;
-
 
 	$query = "UPDATE movies SET
 				judul_artikel = '$judul_film',
@@ -118,8 +115,6 @@ function ubah($data)
 				kategori = '$ch_kategori'
 			  WHERE id_artikel = $id
 			";
-	// var_dump($query);
-	// exit;	
 	mysqli_query($conn, $query);
 
 	return mysqli_affected_rows($conn);

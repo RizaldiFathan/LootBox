@@ -35,7 +35,7 @@ $tiketing = query("SELECT register.username, log_transaksi.id_tiket, log_transak
         <div class="shadow p-3 mb-5 bg-body rounded mt-5 border rounded pb-5">
             <div class="row">
                 <div class="col">
-                    <a href="admin.php" class="btn btn-secondary mt-3 mb-3">Back</a>
+                    <a href="member.php" class="btn btn-secondary mt-3 mb-3">Back</a>
                 </div>
             </div>
             <table class="table text-center">
