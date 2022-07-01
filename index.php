@@ -1,11 +1,13 @@
 <?php
+//untuk memeulai session / ketika user login akan di jalankan terlebih dahulu
 session_start();
 
+//kondisi dimaka ketika session itu statusnya login maka akan di arahkan ke halaman member.php
 if (isset($_SESSION['login'])) {
   header("Location: member.php");
   exit;
 }
-
+//memanggil kelas function.php
 require 'functions.php';
 $id_member = query("SELECT id_member FROM register");
 $artikel = query("SELECT * FROM movies")[0];

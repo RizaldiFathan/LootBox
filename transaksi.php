@@ -11,14 +11,9 @@ if (!isset($_SESSION["username"])) {
     exit;
 }
 
-// $username = $_GET['id_member'];
 
-// $id_member = query("SELECT tiket.id_member, register.username from tiket join register on register.id_member = tiket.id_member where register.username = $username");
-// var_dump($id_member);
-// exit;
 $tiketing = query("SELECT register.username, log_transaksi.id_tiket, log_transaksi.nama_pemesan, log_transaksi.log_tanggal, log_transaksi.log_waktu, kursi.nomor_kursi, movies.judul_artikel from log_transaksi JOIN kursi on kursi.id_kursi=log_transaksi.log_id_kursi JOIN movies on movies.id_artikel=log_transaksi.log_id_artikel join register on register.id_member = log_transaksi.log_id_member where register.username = '$_SESSION[username]'");
-// var_dump($tiketing);
-// exit;
+// query untuk menampilkan histori transaksi
 ?>
 <!doctype html>
 <html lang="en">
